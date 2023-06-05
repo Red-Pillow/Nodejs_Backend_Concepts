@@ -1,0 +1,103 @@
+1) Explain the nodejs event driven architecture.
+
+
+
+Ans 1) Node.js is a JavaScript runtime environment built on Chrome's V8 JavaScript engine. It follows an event-driven architecture, which is one of the key features that make Node.js highly efficient and scalable for building server-side applications. Let's dive into the details of the event-driven architecture in Node.js.
+
+
+
+At the core of Node.js lies the event loop, which is responsible for handling and dispatching events. The event loop continuously listens for events and executes associated callbacks when those events occur. This asynchronous, non-blocking nature is what makes Node.js highly performant and allows it to handle a large number of concurrent connections.
+
+
+
+Here's a simplified overview of how the event-driven architecture works in Node.js:
+
+
+
+Event Registration: In Node.js, you can register event listeners for specific events. For example, you can register a listener to handle incoming HTTP requests or listen for changes in a file.
+Event Loop: The event loop continuously checks for any pending events or callbacks. It waits for events to occur and dispatches them to the appropriate event listeners.
+Event Execution: When an event occurs, the event loop invokes the registered callback function associated with that event. This callback function is executed asynchronously, allowing the event loop to move on to the next event or task without waiting for the current event to finish.
+Non-Blocking I/O: Node.js leverages non-blocking I/O operations to handle multiple concurrent connections efficiently. When an I/O operation (e.g., reading from a file) is initiated, Node.js doesn't block the execution but continues processing other tasks. Once the I/O operation completes, the corresponding event is emitted, and the associated callback is executed.
+Callback Execution: The callback function associated with an event is executed with the relevant data or error information. It can perform additional tasks, make further I/O operations, or trigger other events.
+
+
+This event-driven architecture allows Node.js to handle a large number of concurrent connections while ensuring efficient resource utilization. It promotes scalability, responsiveness, and the ability to handle real-time applications with high throughput.
+
+
+
+It's worth noting that while Node.js is single-threaded, it can utilize multiple threads under the hood for performing I/O operations asynchronously. This enables it to efficiently utilize system resources and handle concurrent tasks effectively.
+
+
+
+
+
+2) How can it basically scale to handle 1000 of requests a sec. What helps node JS even though it is single threaded?
+
+
+
+Ans 2) Although Node.js is single-threaded, it can still handle a high volume of requests per second due to several factors:
+
+
+
+Non-Blocking I/O: Node.js uses non-blocking I/O operations, which means that when an I/O operation, such as reading from a file or making a network request, is initiated, Node.js doesn't wait for the operation to complete. Instead, it continues executing other tasks while the I/O operation happens in the background. This non-blocking behavior allows Node.js to efficiently handle multiple requests simultaneously, even with a single thread.
+
+
+
+Event Loop and Callbacks: Node.js employs an event-driven architecture with an event loop at its core. The event loop continuously checks for events and executes associated callback functions when an event occurs. By utilizing callbacks, Node.js can delegate long-running operations to the underlying system or external resources and move on to handle other requests. This event-driven model allows Node.js to process a large number of requests without getting blocked.
+
+
+
+Scalable Deployment: Node.js applications can be easily scaled by deploying them across multiple servers or containers. By leveraging load balancers, which distribute incoming requests across multiple instances of the application, Node.js can handle a higher volume of requests. Each instance processes requests independently, and with the event-driven nature of Node.js, they can handle a significant number of concurrent connections efficiently.
+
+
+
+Cluster Module: Node.js provides the Cluster module, which allows for the creation of child processes, each running on a separate CPU core. These child processes can share the same server port, enabling them to handle incoming requests in parallel. The Cluster module helps utilize the full processing power of the machine and scale Node.js applications to handle higher request loads.
+
+
+
+Optimized and Asynchronous Code: Writing efficient and asynchronous code is crucial for maximizing Node.js scalability. By avoiding blocking operations and utilizing asynchronous APIs, developers can ensure that the application remains responsive and can handle concurrent requests effectively. Additionally, optimizing code and utilizing performance-enhancing techniques, such as caching or data indexing, can further improve the scalability of a Node.js application.
+
+
+
+External Services: Node.js can offload resource-intensive tasks to external services or microservices. For example, computationally intensive operations can be delegated to separate worker processes or specialized services. This approach allows the Node.js application to focus on handling incoming requests without being overwhelmed by resource-intensive tasks.
+
+
+
+By combining these techniques, Node.js can effectively handle thousands of requests per second, even though it is single-threaded. Its event-driven, non-blocking nature, along with scalable deployment options and optimized code, make it well-suited for building high-performance and scalable server-side applications.
+
+
+
+
+
+3) What does process.exit do?
+
+
+
+Ans 3) The process.exit() function is used to terminate the Node.js process and exit the current application. When process.exit() is called, it immediately stops the execution of the Node.js program and exits the event loop, shutting down the process.
+
+
+
+The process.exit() function accepts an optional exit code parameter, which is a numeric value that indicates the exit status of the process. A status code of 0 usually indicates a successful termination, while non-zero values represent various error or exceptional conditions.
+
+
+
+
+
+4) What does req.url , req.header and req.method contain?
+
+
+
+Ans 4) In Node.js and web frameworks like Express.js, the req object represents the incoming HTTP request from the client. It contains various properties that provide information about the request. Here's an explanation of the properties you mentioned:
+
+
+
+req.url: This property contains the URL (Uniform Resource Locator) path and query parameters of the incoming request. It represents the specific endpoint or resource that the client is requesting. For example, if the client makes a request to "http://example.com/books?id=123", req.url would be "/books?id=123".
+
+
+
+req.headers: This property contains an object representing the headers of the incoming request. HTTP headers are key-value pairs that provide additional information about the request or the client making the request. Common headers include "Content-Type", "User-Agent", "Authorization", etc. You can access specific headers using dot notation on the req.headers object. For example, to access the "User-Agent" header, you would use req.headers['user-agent'].
+
+
+
+req.method: This property contains the HTTP method used in the incoming request. The HTTP method indicates the type of action the client wants to perform on the resource. Common HTTP methods include GET, POST, PUT, DELETE, etc. You can access the HTTP method of the request using req.method. For example, if the client sends a GET request, req.method would be "GET".
+
