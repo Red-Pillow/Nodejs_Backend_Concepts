@@ -1,0 +1,81 @@
+1) Why are we using Express JS ? Any reasons?
+
+
+
+Ans) Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
+Express is a node js web application framework that provides broad features for building web and mobile applications. It is used to build a single page, multipage, and hybrid web application. It's a layer built on the top of the Node js that helps manage servers and routes.
+
+
+
+Express JS is written on top of the Node JS. When we get the request then we have to parse the data or format the data using some function to finally be ready to use this for our business logic. Express JS helps us on just focussing on the business Logic. Express JS is highly flexible and extensible.
+
+
+
+
+
+3)  What are middleware ?
+
+
+
+Ans) Middlewares: The incoming requests are funneled with a bunch of functions. Instead of having one single request handler, we will have multiple functions which the requests will go through until we send the response.
+
+Its a pluggable nature of express so that any third party apps can be plugged.
+
+
+
+
+
+4) What is next used for.
+
+
+
+A) next is function which helps to go from the current middleware to the next middleware. next()
+
+
+
+
+
+5) What is res.send used for?
+
+
+
+A) The res.send function sets the content type to text/Html which means that the client will now treat it as text. It then returns the response to the client
+
+
+
+
+
+6) If i do res.send('<h1> hello to node js </h1>') . What will be the content-type header equal to.
+
+
+
+A) hello to node js.
+
+
+
+
+
+7) If I do res.send( { key1: value }) . What will be the content-type header equal to.
+
+
+
+A) In the case of res.send({ key1: value }), where you are sending a JavaScript object as the response, Express automatically sets the Content-Type header to application/json
+
+
+
+
+
+8) What does app.listen(3000) do behind the scenes ?
+
+
+
+A) app.listen(3000) is used to start a web server that listens for incoming HTTP requests on port 3000.
+
+ Creates an HTTP server using Node.js's built-in http module 
+Attaches the Express application (app) to the HTTP server as a request listener.
+Starts the HTTP server to begin listening for incoming requests on the specified port (in this case, port 3000).
+When a request is received on port 3000, the Express application's middleware and route handlers are invoked to process the request and generate a response. The response is then sent back to the client over the established HTTP connection.
+
+
+
