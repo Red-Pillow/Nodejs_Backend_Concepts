@@ -1,0 +1,3 @@
+What is the body parser used for?
+
+bodyParser is only parses the body with something send through a form. 
