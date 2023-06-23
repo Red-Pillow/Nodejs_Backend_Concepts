@@ -1,0 +1,8 @@
+MVC = All about the separation of concerns
+
+models = The model represents the data and the business logic of the application. It encapsulates the application's data structure, handles data validation, and implements the business rules and operations. The model notifies the view and controller of any changes in the data, allowing them to update accordingly.
+
+
+view = The view is responsible for presenting the data to the user. It displays the user interface, such as the graphical elements, forms, and reports. The view receives input from the user and forwards it to the controller for processing. In some cases, the view may also observe changes in the model and update its display accordingly.
+
+controlers = The controller acts as an intermediary between the model and the view. It receives input from the user via the view, processes the user's actions, and updates the model and view accordingly. The controller contains the application's logic for handling user interactions, coordinating the flow of data, and updating the model and view as needed.
