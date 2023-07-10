@@ -1,0 +1,49 @@
+1)
+
+SQL: 1) It has a Schemas. Data should follow some order to be kept.
+
+   2) Data is stored in a realtional perspective.
+
+   3) Data is distributed across multiple tables. Horizontal scalling is difficult. Vertical scalling is possible
+
+   4) limitations of lots of read and write queries per second
+
+
+
+NO-SQL: 1) schemaless database.
+
+	2) No or few relations
+
+	3) both horizontal and vertical scalling is possible
+
+	4) great performance for mass read and write requests
+
+
+
+2)
+
+vertical vs horizontal scaling:
+
+vertical scaling: 
+
+1) It is to give more power to a single server. Also known as scaling up.
+
+2) more straightforward to implement 
+
+3) it has limits in terms of scaling up
+
+4) it becomes expensive to achieve
+
+
+
+horizontal scaling:
+
+1) Its also known as scaling out.
+
+2) its achieved by adding more infrastructure to the existing infrastructure
+
+3) It is fault tolerant.
+
+4) It is designed to handle distributed data and coordinate across multiple servers.
+
+5) Its application is complicated. Since it's a concept of distributed data. So the data needs to be well coordinated and optimally propagated and to distribute the workload effectively.
