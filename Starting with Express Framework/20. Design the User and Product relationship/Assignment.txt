@@ -1,0 +1,51 @@
+models/User.js
+
+const Sequelize = require('sequelize')
+const sequelize = require('../util/database');
+
+const User = sequelize.define('user', {
+
+	id:{ 
+		type: Sequelize.INTERGER,
+		autoIncrement: true,
+		allowNull: false,
+		primaryKey: true
+	    },
+
+	name: Sequelize.STRING,
+	email: Sequelize.STRING
+	});
+
+module.exports = User;
+
+
+Create Association:
+
+Product.belongsTo(User,{constraints: true, onDelete: 'CASCADE'});
+User.hasMany(Product);
+
+
+sequelize
+
+.sync()
+.then(result =>{
+return User.findByPk(1) 
+})
+.then(user=>{
+ if (!user){
+    return User.create({name:'Max', email: 'test@gmail.com'});
+    }
+   return user;
+})
+.then(user =>{
+console.log(user)
+app.listen(3000);
+.catch(err=> {
+console.log(err);
+})
+
+
+	
+
+	
+Its a many to many relationship because.. A user can have multiple products and a product has multiple users
