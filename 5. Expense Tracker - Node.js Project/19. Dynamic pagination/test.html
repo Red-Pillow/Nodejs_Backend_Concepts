@@ -1,0 +1,88 @@
+<div id="pagination">
+    <button id="previousButton">Previous</button>
+    <span id="currentPage">1</span>
+    <button id="nextButton">Next</button>
+  </div>
+
+  
+  <div id="itemsPerPage">
+    <label for="itemsPerPageSelect">Items per Page:</label>
+    <select id="itemsPerPageSelect">
+      <option value="2">2</option>
+      <option value="4">4</option>
+      <option value="6">6</option>
+    </select>
+  </div>
+
+  
+  <script>
+  // Get references to the previous button, current page element, and next button.
+// Get references to the previous button, current page element, and next button.
+const previousButton = document.getElementById('previousButton');
+const currentPageElement = document.getElementById('currentPage');
+const nextButton = document.getElementById('nextButton');
+
+// Define the current page and the total number of pages.
+let currentPage = 1;
+const totalPages = 7; // Adjust this to the total number of pages in your application.
+const itemsPerPage = 2; 
+// Function to update the buttons based on the current page.
+function updateButtons() {
+  // Disable or enable the previous and next buttons based on the current page.
+  previousButton.disabled = currentPage === 1;
+  nextButton.disabled = currentPage === totalPages;
+
+  // Remove all buttons except previous and next.
+  currentPageElement.textContent = currentPage;
+  const pagination = document.getElementById('pagination');
+  pagination.innerHTML = '';
+  pagination.appendChild(previousButton);
+  pagination.appendChild(currentPageElement);
+  pagination.appendChild(nextButton);
+
+  // Show the appropriate adjacent buttons.
+  if (currentPage > 1) {
+    const buttonLeft = document.createElement('button');
+    buttonLeft.textContent = currentPage - 1;
+    pagination.insertBefore(buttonLeft, currentPageElement);
+  }
+
+  if (currentPage < totalPages) {
+    const buttonRight = document.createElement('button');
+    buttonRight.textContent = currentPage + 1;
+    pagination.insertBefore(buttonRight, nextButton);
+  }
+
+  // Add event listeners to the new buttons.
+  Array.from(pagination.getElementsByTagName('button')).forEach(button => {
+    button.addEventListener('click', () => {
+      const newPage = parseInt(button.textContent);
+      if (!isNaN(newPage)) {
+        currentPage = newPage;
+        updateButtons();
+      }
+    });
+  });
+}
+
+// Add event listeners to the previous and next buttons.
+previousButton.addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+
+    updateButtons();
+  }
+});
+
+nextButton.addEventListener('click', () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+
+    updateButtons();
+  }
+});
+
+// Initialize the buttons based on the current page.
+updateButtons();
+
+  </script>
