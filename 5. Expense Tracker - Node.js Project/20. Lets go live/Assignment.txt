@@ -1,0 +1,62 @@
+
+Watch video 1 to 3 from the following link and answer the following [Code along with the trainer.]
+
+1. What are environment variables and what should we use it for?
+
+Environment Variables;
+
+A) Environment variables are the concepts by the nodejs where we can pass certain configuration, certain values into our node application from outside, so we dont hardcode these values into our node code instead these vaues would be injected when our node server starts and that allows us to use different values in the environment and in the production and we can also conviniently change the values in production without having to redeploy our entire code. 
+
+
+
+2. What all thing should you do to prepare code for production?Explain each one of them and why we need it?
+
+A)
+1 Use Environments Variables - Avoid hard coded values in code
+2 Use Production API Keys
+3 Reduce the Error output details - not sending sensitive info to users
+4 Set secure response headers - Implimentbest practice
+5 Add asset compression - reduce response size
+6 configure logging - stay up to date about whats happening
+7 Use SSL/TLS - Encrypt data in transit
+
+
+Watch video 4 from the above link and answer the following [Code along with the trainer.]
+
+3. Why should we put the port number and mongodb connection string in env variable?
+
+A). We shouldn't hardcode the node.js project. we should put the port number and mongodb connection in env variable because it is convinient to change without having to redeploy the entire code.
+
+4. What is process variable? What does process.env do?
+
+A) The process. env is a global object used to access all the environment variables of the environment your application is running. That means that it is accessible everywhere in our application
+
+
+Watch video 6 and understand how to may your application more secure?
+
+What are the key security things which helmet provides. Can you explain a few?
+
+For secure headers, secure node express application.
+this package will add certain headers to the responses we send back
+it protect our environment in these cases
+a) crossdomain - to handle adobe products cross domain requests
+b) content security policy - for setting up content security policy
+c) feature policy - to limit site's feature
+d) frameguard - to prevent clickjacking
+
+
+
+2. How does the udemy trainer configure morgan? Can you explain the flow and what logs will morgan provide
+A) in terminal we have to write npm install --save morgan, 
+Detailed loging information about the incomming request - GET, POST, DELETE etc
+In the terminal:
+ const morgan = require('morgan')
+ const fs = require('fs')
+const accessLogStream=fs.createWriteStream(
+    path.join(__dirname,'access.log'),
+    {flags:'a'}
+    );
+app.use(morgan('combined',{stream:accessLogStream}));
+
+
+
