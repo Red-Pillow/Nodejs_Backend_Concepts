@@ -1,0 +1,174 @@
+Watch video 9  from the following link and answer the following [Dont Code along with the trainer.]
+
+What is SSL and how does it work exactly? [Favourite Interview Question]
+
+A) SSL/TLS-securing the data that is sent from the client to the server.
+with SSL/TLS encryption Eavesdrpping is not possible.This is achieved with public and private key pair. Both is known to the server. Private key will only be known to the server which will be to decrypting the data. And public key would be to encrypting the data. 
+
+We bind the public key to the server identity. the server identity could be simply the domain, admin email address..we set that data when we create the cirtificate. That ssl cirtificate therefore connects a public key in the server and sends it to the client (browser). So the client knows the public key and knows it belongs to the server. 
+
+
+
+
+Watch video 10, 11 from above vide link  and answer the followi
+1) How does Heroku works?
+A) Heroku is a cloud platform that allows developers to deploy, manage, and scale web applications and services. It abstracts much of the underlying infrastructure and server management, making it easier for developers to focus on building and deploying their applications. Here's how Heroku works:
+
+Application Code: Developers write their application code using a programming language of their choice. Heroku supports multiple programming languages, including Ruby, Python, Node.js, Java, PHP, and more.
+
+Version Control: The application code is typically stored in a version control system like Git, allowing developers to track changes and collaborate with others.
+
+Procfile: Developers define a Procfile that specifies how to run the application. This file contains instructions for starting and scaling the application's processes.
+
+Git Repository: The code and the Procfile are pushed to a Git repository, which can be linked to Heroku. Heroku uses Git to build and deploy the application.
+
+Dynos: Heroku uses a container-based architecture called "dynos" to run applications. Dynos are isolated, lightweight containers that run the application processes. Each dyno can handle a specific aspect of the application, such as web servers, background workers, or other custom processes.
+
+Build and Release: When code is pushed to the Git repository linked to Heroku, it triggers a build and release process. Heroku automatically detects the changes, compiles the code, and prepares it for deployment.
+
+Add-ons: Heroku offers a marketplace of add-ons that can be easily integrated into applications. These add-ons provide services like databases, caching, monitoring, and more. Developers can attach and configure these add-ons to their application.
+
+Environment Variables: Configuration and sensitive data like API keys are stored as environment variables. Heroku provides a secure way to manage these variables without exposing them in the codebase.
+
+Scaling: Heroku allows for easy scaling of applications. Developers can adjust the number of dynos to handle changes in traffic and demand. This can be done manually or automatically through Heroku's autoscaling features.
+
+Monitoring and Logging: Heroku provides tools for monitoring application performance, error tracking, and logging. Developers can gain insights into how their application is performing and troubleshoot issues.
+
+Continuous Integration: Heroku can be integrated with CI/CD (Continuous Integration/Continuous Deployment) pipelines to automate the deployment process. This ensures that code changes are deployed consistently and reliably.
+
+Collaboration and Access Control: Heroku offers role-based access control, allowing teams to collaborate on application development while maintaining security and compliance standards.
+
+Custom Domains: Developers can configure custom domains for their Heroku applications, making them accessible through their own branded URLs.
+
+SSL/TLS: Heroku provides built-in support for SSL/TLS encryption, ensuring secure communication between users and the application.
+
+Data Management: Heroku offers various data services, including Heroku Postgres for databases and other add-ons for caching, search, and more.
+
+Application Updates: Developers can easily push updates to their application code, which triggers new builds and releases. Heroku handles the deployment process without requiring manual intervention.
+
+In summary, Heroku abstracts infrastructure management, simplifying the deployment and scaling of web applications. Developers can focus on writing code, and Heroku takes care of the underlying infrastructure, making it an attractive platform for developers who want to deploy and manage their applications with ease.
+
+
+2) Why is git called version controller?
+A) Git is often referred to as a "version control system" (VCS) because its primary purpose is to manage and control different versions of a codebase or a set of files. Here's why it's called a version control system:
+
+Versioning: Git allows developers to keep track of the changes made to their code over time. Each change is recorded as a "commit" or a "version." By doing so, Git provides a history of all changes, making it possible to see what the code looked like at different points in time. This versioning capability is crucial for tracking progress, troubleshooting issues, and collaborating with others.
+
+Control: Git provides fine-grained control over the versioning process. Developers can choose when to create commits, what changes to include in each commit, and how they organize their codebase. They can also control which versions are shared with others, and which remain local.
+
+Collaboration: Git is essential for collaborative software development. Multiple developers can work on the same project simultaneously. Git helps merge their changes and resolve conflicts, ensuring that multiple versions of the code can be integrated successfully.
+
+Branching: Git introduces the concept of branches, which allows developers to create separate lines of development. Each branch represents a distinct version of the code, making it easy to work on new features or bug fixes independently. Once a branch is completed, it can be merged back into the main codebase.
+
+Staging and Committing: Git allows developers to stage changes before committing them. This means they can selectively choose which changes to include in a commit. It gives developers control over the granularity of their versioning.
+
+History and Annotations: Git provides tools to examine the history of the codebase and annotate it with information about who made changes and why. This can be invaluable for understanding why certain decisions were made or tracking the evolution of the project.
+
+Backup and Recovery: Git acts as a backup system. Even if data is lost or a mistake is made, it's often possible to recover previous versions of the code.
+
+Distributed: Git is a distributed version control system. Each developer working on a project has a complete copy of the code and its history on their local machine. This means that they can work offline and independently, which is a significant advantage for distributed and open-source development.
+
+In summary, Git is called a "version control system" because it provides the tools and mechanisms necessary to manage, control, and track the versions of code and files in a software project. It enables collaboration, history tracking, branching, and more, making it an essential tool for software development and other contexts where versioning and control of files are important.
+
+
+3) What is commit, branch and remote?
+
+A) 
+Commit:
+
+A "commit" in Git represents a snapshot of your codebase at a specific point in time. It includes all the changes you've made to your files.
+Each commit is identified by a unique hash (a long string of characters) and contains information about the changes made, the author, a timestamp, and a reference to the previous commit, forming a linked chain of commits.
+Commits are created using the git commit command. When you commit your changes, you provide a commit message to describe what you've done in that particular snapshot.
+Branch:
+
+A "branch" in Git is a separate line of development within your repository. It allows you to work on new features, bug fixes, or experiments independently of the main codebase.
+Each branch has its own set of commits, and they diverge from the main branch (usually called "master" or "main"). This divergence enables parallel development without affecting the main codebase until changes are merged.
+Branches are created using the git branch command, and you can switch between branches using git checkout. Merging branches is done with git merge or git rebase.
+Remote:
+
+A "remote" in Git refers to a copy of a Git repository that exists on a different server or location, typically hosted on platforms like GitHub, GitLab, Bitbucket, or a remote server.
+Remotes are used for collaboration and sharing code with others. They provide a way to synchronize your local repository with a centralized or remote repository.
+When you clone a repository from a remote, it becomes your local copy, and you can push your commits to the remote repository to share your changes.
+You can configure multiple remotes to work with different repositories and collaborate with multiple teams or contributors.
+In summary:
+
+A "commit" represents a snapshot of your code at a specific point in time, and it's used to record changes and create a version history.
+A "branch" is a separate line of development that allows for parallel work on features, bug fixes, or experiments.
+A "remote" is a copy of a Git repository hosted on a different server, enabling collaboration and synchronization between your local repository and remote repositories.
+
+
+
+1) What does .gitignore file do?Why is it important?
+
+A .gitignore file is used in Git to specify files and directories that should be ignored and not tracked by Git. It allows you to exclude files from being included in the version control system. The primary purpose of the .gitignore file is to avoid cluttering your Git repository with unnecessary or sensitive files and to prevent them from being accidentally committed to the repository.
+
+Here's why the .gitignore file is important:
+
+Avoiding Unwanted Files: It helps prevent files and directories that are generated as part of your development process from being added to the repository. This includes build artifacts, log files, editor-specific files, and temporary files.
+
+Enhancing Repository Cleanliness: By ignoring unnecessary files, the Git repository remains clean and focused on the actual source code and project assets. This makes it easier to navigate, manage, and collaborate on the project.
+
+Protecting Sensitive Information: Sensitive information like API keys, passwords, configuration files, and personal data should never be committed to a Git repository. The .gitignore file allows you to exclude such files, protecting sensitive information from being exposed to others.
+
+Cross-Platform Compatibility: Different operating systems may generate system-specific files that are not relevant to other platforms. The .gitignore file can help ensure that these platform-specific files don't interfere with cross-platform development.
+
+Version Control Efficiency: Ignoring irrelevant files and directories can help speed up Git operations like cloning, pushing, and pulling, as Git won't waste time tracking unnecessary changes.
+
+Cloning and Collaboration: When others clone your Git repository, they inherit your .gitignore rules, making it more likely that they have a consistent development environment. This is especially important in team collaboration.
+
+
+
+
+2) Why don't we push node module to git?
+
+
+It's generally not a good practice to push the node_modules directory to Git repositories, and there are several reasons for this:
+
+Size: The node_modules directory can be quite large, especially for projects with many dependencies. Storing it in the repository would significantly increase the size of the repository. This makes cloning, pushing, and pulling the repository slower and consumes more storage space on both your local machine and the remote repository server.
+
+Version Control Redundancy: The node_modules directory contains all the packages and dependencies your project needs. However, package information and versions are already managed in the package.json file. Including the actual packages in node_modules in your repository is redundant because you can always install the correct dependencies based on the package.json file.
+
+Collaboration and Sharing: When you share your project with others, whether it's with team members or through a public repository on platforms like GitHub, you typically expect them to install dependencies using the package.json file. Including node_modules can lead to version conflicts and confusion.
+
+Security and Licensing: You might not want to share all the dependencies' source code or licensing information in your repository. Some packages may have licenses that conflict with your project's licensing requirements. By excluding node_modules, you avoid potential licensing issues.
+
+So, to avoid these problems and maintain a cleaner and more efficient repository, it's a best practice to add the node_modules directory to your .gitignore file, which ensures that it's not tracked by Git. Developers who clone your repository can then use the following steps to set up the project:
+
+Clone the repository.
+Navigate to the project directory.
+Run npm install (or yarn install, depending on your package manager) to install the project's dependencies based on the package.json file.
+By following this practice, you keep your Git repository focused on the essential code and configuration files, while also making it easier for collaborators to set up the project with the correct dependencies. Additionally, it helps ensure that your repository is more maintainable and efficient in the long run.
+
+
+
+3) What happens when we restart the server?
+
+When you restart a server, whether it's a web server, application server, database server, or any other type of server, several things occur depending on the server's role and configuration. Here's an overview of what typically happens when a server is restarted:
+
+Service Termination: The currently running server processes are terminated. This means that any applications, services, or processes that were running on the server are stopped. This may include web applications, database connections, background jobs, etc.
+
+Resource Release: Resources, such as CPU, memory, and network ports, that were being used by the server processes are released. This allows the server to start fresh and allocate resources to new processes.
+
+Data Persistence: If the server manages data that should persist between restarts, it should ensure that the data is saved to disk or another storage medium before shutting down. This is crucial for databases, file servers, and other data-driven applications.
+
+Configuration Reload: In some cases, server configuration changes may be applied. For example, web servers like Apache or Nginx can reload their configuration without a full restart, allowing changes to take effect without downtime.
+
+Start-Up Procedures: During the restart, the server will go through its startup procedures. This includes initializing services, opening network ports, and preparing to accept incoming requests.
+
+Health Checks: In a clustered or load-balanced environment, health checks may be performed on the server to ensure it is ready to handle requests. This helps distribute traffic away from servers that are still starting up or experiencing issues.
+
+Logging and Monitoring: Server logs are often generated or updated to record the restart event. Monitoring systems may also capture this event and notify administrators of the restart.
+
+Service Availability: For services with high availability requirements, administrators may use redundancy, failover mechanisms, or load balancing to minimize downtime during a server restart. This involves rerouting requests to other servers in the cluster while one is being restarted.
+
+Dependencies: Servers often rely on other services or databases. When restarting a server, administrators must consider the dependencies and ensure that dependent services are also available or are started in the correct order.
+
+Testing: It's common practice to test server restarts in a non-production environment to ensure that the process goes smoothly and that services come back up as expected.
+
+The impact of restarting a server on users and applications can vary. In some cases, the restart might lead to brief service unavailability or disruptions, while in others, users might not notice any impact at all, especially if redundancy and failover mechanisms are in place.
+
+It's important to plan server restarts carefully, especially in production environments, to minimize downtime and prevent data loss or service disruptions. Proper monitoring, backups, and change management procedures are typically part of these plans.
+
+
+
+
