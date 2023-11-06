@@ -1,0 +1,161 @@
+q1) Watch video 1 and 2 from the following link and answer the following
+
+A) Static Typing:
+
+Advantage: TypeScript enforces type checking at compile time, which can catch type-related errors before runtime. This leads to more robust and maintainable code.
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+const result = add(5, "10"); // Error: Argument of type 'string' is not assignable to parameter of type 'number'.
+
+
+Enhanced Code Quality:
+
+Advantage: TypeScript encourages better coding practices by helping developers write cleaner, self-documented code through type annotations.
+
+function greet(name: string): string {
+  return `Hello, ${name}!`;
+}
+const message: string = greet("Alice");
+
+
+IDE Support:
+
+Advantage: TypeScript provides rich tooling and support in integrated development environments (IDEs), offering features like autocompletion, code navigation, and error checking.
+Example: In Visual Studio Code, as you type TypeScript code, you'll get real-time feedback and suggestions.
+
+
+2) What does typescript add to javascript?Explain each of them in your own words. Research on google if you are confused.
+
+A) 
+typescript adds:
+1) types
+2) next-get javascript featurs (compiled down for older browser
+3) non-javascript features like interfaces of generics
+
+4) meta-programming features like decorators
+
+5) rich configuration options
+6) modern tooling that helps even in non-typescript projects
+
+
+
+Watch video 3 and 4 from above link and answer the following [Code along with the trainer.]
+
+1) Why do we need typescript compiler?
+A) TypeScript extends JavaScript and improves the developer experience. It enables developers to add type safety to their projects. Moreover, TypeScript provides various other features, like interfaces, type aliases, abstract classes, function overloading, tuple, generics, etc.
+
+2) What happens when you compile?
+A) Then after compiling the TypeScript code file into the JavaScript code file, it actually reads and interprets the JavaScript code. After interpreting the JavaScript code, the compiler compiles that code which thereafter produces the result
+
+3) Code along with the trainer.
+A) I just did
+
+4) What are the different types available in typescript?
+A) numbers, any, array, enums, boolean, string, type, tuple and many more.
+
+5) Why does add('1', '2') start showing error when the trainer has defined types?
+A) Because it was defined as number but the parameters are passed as strings.
+
+
+Watch video 5 , 6 and 7 from above link and answer the following [Code along with the trainer.]
+
+1) What do you mean typescript can infer the types? What is the advantage of this?
+A) Adding type annotations to our code is extra code we need to write, which consumes a little more of our time and bloats our code. TypeScript has something called type inference, which means, in many cases, it can work out a variable's type without it having a type annotation.
+
+2) What is the problem with type inferenece sometime and how do you solve with type casting?
+A) sometimes it tries to infer type but it isnt the right one because not every HTML element has a value properties,input elements has value properties and paragraphs dont so the remedy here would be to type cast the HTML element that is needed here to be so HTMLinputElement was specifically mentioned to let "value" keyword can be used.
+
+3) What does tsc init do?
+A) tsc --init ,this adds tscconfig.json file. which gives us many options. just as strict : true
+
+4) What does strict mode do?
+A) Strict mode changes previously accepted "bad syntax" into real errors. As an example, in normal JavaScript, mistyping a variable name creates a new global variable. In strict mode,  will throw an error, making it impossible to accidentally create a global variable
+
+5) What does buttonElement ! exactly do ? Why do we put EXCLAMATION MARK( ! ).
+A) The exclamation mark ! is known as the non-null assertion operator in TypeScript
+
+6) Why shouldnt we use any type?
+A) Why not use Type any?
+For myself, the use of "any" imples that some code really does not care at all about what type it is dealing with, and that it should not care if used in the most strict sense. Once the author begins to guess at or even test the type of the value, that's where "any" begins to be misused.
+
+
+Watch video 8 , 9 and 10 from above link answer the following [Code along with the trainer.]. Skip 11.
+
+1) How we handle objects?
+A) 
+function printResult(resultObj:{val:number; timestamp:Date}){
+    console.log(resultObj.val)
+}
+
+buttonElement.addEventListener('click',()=>{
+    const num1 = num1Element.value
+    const num2 = num2Element.value
+    const result = add(+num1,+num2)
+    const stringresult = add(num1,num2)
+    console.log(result)
+    console.log( stringresult)
+    printResult({val: result as number, timestamp: new Date()}); 
+});
+
+2) How do we handle arrays?
+
+A) 
+const numResults: number[] = []
+const textResults: string[] = []
+
+buttonElement.addEventListener('click',()=>{
+    const num1 = num1Element.value
+    const num2 = num2Element.value
+    const result = add(+num1,+num2)
+    const stringresult = add(num1,num2)
+    console.log(result)
+    numResults.push(result as number)
+    console.log( stringresult)
+    textResults.push(stringresult as string)
+    printResult({val: result as number, timestamp: new Date()}); 
+    console.log(numResults)
+    console.log(textResults)
+});
+
+
+
+4) What does type keyword do?
+A) type is a keyword in TypeScript that we can use to define the shape of data.
+
+5) Interface are more frequently used than types. What do you think is the advantage of interfaces?
+A) Interfaces are commonly used to define the shape of objects. They allow you to specify the structure of an object, including the names of properties and their types. This is particularly useful when you want to ensure that objects conform to a specific structure.
+Interface are also used to force classes to impliment certain methods or functionalities.
+
+6) How is an array a generic as per the trainer?
+A) Generic is a type that interacts with another type. example array.. is an array type but it has
+elements of integer type.
+array: const numResults: Array<number> = []
+promise: 
+
+const myPromise = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve('It worked')
+    },1000);
+})
+myPromise.then((result)=>{
+    console.log(result)
+})
+
+
+Promise a generic type because it at the end results to a value. and the value it results to is the generic type of the promise
+
+
+
+7) Why do we need to change the target to es6?
+A) es5 is a bit old version of JS. so we changed to es6.
+
+8) How does generics work with promises.
+A) Promise a generic type because it at the end results to a value. and the value it results to is the generic type of the promise
+
+
+
+
+
+
