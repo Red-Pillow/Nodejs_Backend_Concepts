@@ -1,0 +1,21 @@
+Watch video 12  from the following link and answer the following [Code along with the trainer.]
+
+1) Why do we need to install types/node? What does it do?
+A) It contains types defination for Node.js. It contains core node modules translated to typescript
+
+2) Why do we need to install types/express? What does it do?
+A) with this installation we get modules that helps in translation for express in typescript
+
+3) What is the need for changing moduleresolution to es6?
+A) Because es5 is pretty old to handle typescript.
+
+4) Import keyword is very similar to require keyword. What do you think?
+A) When we use import the backend code for this funtion runs the require keyword.
+
+5) How to use import keyword?
+A) import express from 'express';
+
+Watch video 13 , 14 and 15
+
+1) How does import { Router } from 'express'. work. What does { } this do?
+A) This just imports exactly what we need
