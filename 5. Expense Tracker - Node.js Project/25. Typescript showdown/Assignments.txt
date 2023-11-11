@@ -1,0 +1,69 @@
+Watch video 12  from the following link and answer the following [Code along with the trainer.]
+
+1) Why do we need to install types/node? What does it do?
+A) It contains types defination for Node.js. It contains core node modules translated to typescript
+
+2) Why do we need to install types/express? What does it do?
+A) with this installation we get modules that helps in translation for express in typescript
+
+3) What is the need for changing moduleresolution to es6?
+A) Because es5 is pretty old to handle typescript.
+
+4) Import keyword is very similar to require keyword. What do you think?
+A) When we use import the backend code for this funtion runs the require keyword.
+
+5) How to use import keyword?
+A) import express from 'express';
+
+Watch video 13 , 14 and 15
+
+1) How does import { Router } from 'express'. work. What does { } this do?
+A) This just imports exactly what we need.
+
+2) What do you mean by interface?Why do we have to create it for todos type?
+A) In programming, an interface defines a set of methods that a class must implement. It's like a contract that specifies what methods a class should have without defining how those methods work. It establishes a common set of behaviors that classes can adhere to.
+Regarding a "todos" type and creating an interface for it, let's consider a scenario. If you have a program managing different types of tasks (todos), you might want different types of tasks like work tasks, personal tasks, shopping tasks, etc. Each task type might have some common behaviors, like getDescription(), getStatus(), updateStatus(), etc.
+
+3) What are named exports and default exports?
+A) In TypeScript, named and default exports work similarly to JavaScript, but with the advantage of having strong typing.
+
+// Module file
+export const function1 = () => { /* function logic */ };
+export const variable1: number = 42;
+export class MyClass { /* class definition */ }
+
+
+When importing named exports in TypeScript, you maintain type safety:
+import { function1, variable1, MyClass } from './moduleFile';
+
+TypeScript ensures that the imported entities match their respective types, and if there are mismatches, it will throw type errors during compilation.
+
+Default Exports in TypeScript:
+// Module file
+const defaultExport: string = "This is a default export";
+export default defaultExport;
+
+When importing a default export in TypeScript, you can specify the type:
+
+import SomeName from './moduleFile';
+
+
+Watch video 17 and 18 from the following link and answer the following [Code along with the trainer.]
+
+1) What is type casting?
+A) In TypeScript, type casting, also known as type assertion, is a way to tell the compiler about the type of a variable when the actual type might not be evident to the compiler.
+
+Type casting is performed using the as syntax or angle bracket syntax <type>. It doesn't change the runtime behavior but informs the TypeScript compiler about the variable's type.
+
+For instance:
+
+Using as syntax:
+let someValue: any = "This is a string";
+let strLength: number = (someValue as string).length;
+
+2) What is the need of RequestBody and RequestParams?
+A) The discipline of using RequestBody and RequestParams helps to keep the type of the body or params to be inputed
+basically the input type is already defined.
+
+Watch video 19 and 20 and answer the following [Code along with the trainer.]
+
