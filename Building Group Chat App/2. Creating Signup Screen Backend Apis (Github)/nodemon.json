@@ -1,0 +1,18 @@
+{
+    "env":{
+        "TOKEN_SECRET" : "46758tgv8tuyfhjvbsw45e6rtuighvnmbu0890iaewedfgchnvgturtydhgjgkoiue556yvg45rcgvhb",
+
+"secret_jwt" : "mysecretkey",
+
+
+
+"DB_NAME":"group_chat",
+"DB_USERNAME":"group_chat_root",
+"DB_PASSWORD":"1234567890",
+"DB_TYPE":"mysql",
+"DB_HOSTNAME":"localhost",
+
+
+"PORT":3000
+    }
+}
