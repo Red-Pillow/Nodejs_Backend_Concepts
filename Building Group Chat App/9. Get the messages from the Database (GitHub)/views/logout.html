@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <!--This page will not be displayed-->
+    </head>
+<body>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+
+<script> 
+
+        function someoneLeftTheChat(){
+            const token = localStorage.getItem('token')
+            const message  = "left the chat"
+            axios.post("http://localhost:3000/chat/send-message", {message, Authorization:token})
+                    .then((response) => {
+                        if (response.data.status===200){
+                            refreshPage()
+                            console.log("succesfull")
+                        }
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                        alert("Failed to send message. Please try again.");
+                    });
+            }
+    const token = localStorage.getItem("token")
+        console.log("yes 99 frontend 1")
+    axios.get("http://localhost:3000/user/logout/",{headers: {"Authorization": token}})
+            .then((response) => {
+                console.log("yes 99 frontend 2")
+                someoneLeftTheChat()
+                localStorage.setItem('token',response.data.token)
+                window.location.assign("login");
+                
+                
+            })
+            .catch((err)=>{
+
+            })
+</script>
+
+
+
+
+</body>
+</html>
